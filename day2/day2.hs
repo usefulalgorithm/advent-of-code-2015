@@ -1,9 +1,12 @@
 import Data.List.Split (splitOn)
 import Data.List
 
-main =
-  -- readFile "input.txt" >>= first
-  readFile "input.txt" >>= second
+main = do
+  content <- readFile "input.txt"
+  putStr "First: "
+  first content
+  putStr "Second: "
+  second content
 
 first :: String -> IO ()
 first s = do
