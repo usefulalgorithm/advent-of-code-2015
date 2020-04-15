@@ -1,11 +1,15 @@
-import qualified Data.Set as S
+module Days.Day3 (day3) where
 
-main = do
-  content <- readFile "input.txt"
+import qualified Data.Set        as S
+import           Days.ReadPuzzle
+
+day3 :: IO ()
+day3 = do
+  input <- readPuzzle 3
   putStr "First: "
-  first content
+  first input
   putStr "Second: "
-  second content
+  second input
 
 first :: String -> IO ()
 first s = do
@@ -19,13 +23,13 @@ nextPoint (x, y) c = case c of
                        'v' -> (x, y-1)
                        '<' -> (x-1, y)
                        '>' -> (x+1, y)
-                       _ -> (x, y)
+                       _   -> (x, y)
 
 evens (x:xs) = x:odds xs
-evens _ = []
+evens _      = []
 
 odds (_:xs) = evens xs
-odds _ = []
+odds _      = []
 
 second :: String -> IO ()
 second s = do

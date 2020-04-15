@@ -1,13 +1,16 @@
-import Data.List
-import Data.String.Utils
+module Days.Day5 (day5) where
 
-main :: IO ()
-main = do
-  content <- readFile "input.txt"
+import           Data.List
+import           Data.String.Utils
+import           Days.ReadPuzzle
+
+day5 :: IO ()
+day5 = do
+  input <- readPuzzle 5
   putStr "First: "
-  go content [niceOne, niceTwo, niceThree]
+  go input [niceOne, niceTwo, niceThree]
   putStr "Second: "
-  go content [niceFour, niceFive]
+  go input [niceFour, niceFive]
     where niceOne xs = (length (filter isVowel xs)) > 2
           niceTwo xs = any (\c -> isInfixOf (replicate 2 c) xs) ['a'..'z']
           niceThree xs = not $ any (\p -> isInfixOf p xs) ["ab", "cd", "pq", "xy"]

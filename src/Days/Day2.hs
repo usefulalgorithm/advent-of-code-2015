@@ -1,12 +1,16 @@
-import Data.List.Split (splitOn)
-import Data.List
+module Days.Day2 (day2) where
 
-main = do
-  content <- readFile "input.txt"
+import           Data.List
+import           Data.List.Split (splitOn)
+import           Days.ReadPuzzle
+
+day2 :: IO ()
+day2 = do
+  input <- readPuzzle 2
   putStr "First: "
-  first content
+  first input
   putStr "Second: "
-  second content
+  second input
 
 first :: String -> IO ()
 first s = do
