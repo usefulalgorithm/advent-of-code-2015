@@ -8,5 +8,5 @@ main = do
   rawArgs <- getArgs
   let args = (fst . head . reads) <$> rawArgs
   if null args
-     then runAll
+     then run [1..25]
      else run args
