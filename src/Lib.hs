@@ -9,6 +9,7 @@ import           Days.Day4
 import           Days.Day5
 import           Days.Day6
 import           Days.Day7
+import           Days.Day8
 import           Language.Haskell.Interpreter
 
 doDay :: Int -> IO ()
