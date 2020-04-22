@@ -20,6 +20,7 @@ first s = do
   let result = map sum $ map (zipWith (*) [3, 2, 2]) sorted
   print $ sum result
 
+combinations :: Int -> [a] -> [[a]]
 combinations k ns = filter ((k==).length) (subsequences ns)
 
 toSides :: String -> [Int]

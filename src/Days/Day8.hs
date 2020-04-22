@@ -12,10 +12,10 @@ day8 = do
 
 countEscaped :: String -> Int
 countEscaped "" = 2
-countEscaped ('\\' : 'x' : a : b : xs) = 1 + countEscaped xs
+countEscaped ('\\' : 'x' : _ : _ : xs) = 1 + countEscaped xs
 countEscaped ('\\' : '"' : xs) = 1 + countEscaped xs
 countEscaped ('\\' : '\\' :xs) = 1 + countEscaped xs
-countEscaped (x:xs) = 1 + countEscaped xs
+countEscaped (_:xs) = 1 + countEscaped xs
 
 countEscapedString :: String -> Int
 countEscapedString s
@@ -33,5 +33,5 @@ second input = do
 countEncodedString :: String -> Int
 countEncodedString ('"':xs) = 2 + countEncodedString xs
 countEncodedString ('\\':xs) = 2 + countEncodedString xs
-countEncodedString (x:xs) = 1 + countEncodedString xs
+countEncodedString (_:xs) = 1 + countEncodedString xs
 countEncodedString _ = 0

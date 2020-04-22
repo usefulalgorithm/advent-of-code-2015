@@ -29,10 +29,13 @@ dependencies:
 - hint
 - containers
 - parsec
+- ordered-containers
 
 library:
   source-dirs: 
   - src
+  ghc-options:
+  - -Wall
 
 executables:
   aoc2015-exe:

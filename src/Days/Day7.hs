@@ -1,6 +1,5 @@
 module Days.Day7 (day7) where
 
-import           Control.Monad
 import           Data.Bits
 import           Data.Char
 import qualified Data.Map        as M

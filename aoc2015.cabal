@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 210a3d1264bebbaf7b3eff8974b89a2905f1ea1a57e57eb89ef182cf8f6bc95f
+-- hash: 6454b2fab59b6d155173031c61dd4ee428a8ea4438a4eff71db8d05215f7b217
 
 name:           aoc2015
 version:        0.1.0.0
@@ -35,12 +35,14 @@ library
       Days.Day6
       Days.Day7
       Days.Day8
+      Days.Day9
       Days.ReadPuzzle
       Lib
   other-modules:
       Paths_aoc2015
   hs-source-dirs:
       src
+  ghc-options: -Wall
   build-depends:
       MissingH
     , array
@@ -48,6 +50,7 @@ library
     , containers
     , filepath
     , hint
+    , ordered-containers
     , parsec
     , split
     , text
@@ -68,6 +71,7 @@ executable aoc2015-exe
     , containers
     , filepath
     , hint
+    , ordered-containers
     , parsec
     , split
     , text
@@ -89,6 +93,7 @@ test-suite aoc2015-test
     , containers
     , filepath
     , hint
+    , ordered-containers
     , parsec
     , split
     , text

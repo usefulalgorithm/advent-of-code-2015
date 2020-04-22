@@ -21,4 +21,4 @@ day5 = do
 go :: String -> [(String -> Bool)]-> IO ()
 go s funcs = do
   print $ length $ filter (isNice . strip) $ lines s
-    where isNice s = and $ map ($ s) funcs
+    where isNice s' = and $ map ($ s') funcs

@@ -1,15 +1,6 @@
 module Lib (run) where
 
 import           Control.Monad
-import           Data.Either
-import           Days.Day1
-import           Days.Day2
-import           Days.Day3
-import           Days.Day4
-import           Days.Day5
-import           Days.Day6
-import           Days.Day7
-import           Days.Day8
 import           Language.Haskell.Interpreter
 
 doDay :: Int -> IO ()

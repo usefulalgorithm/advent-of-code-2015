@@ -15,7 +15,7 @@ first :: String -> IO ()
 first s = do
   let start = (0,0)
   let set = S.singleton start
-  print $ S.size $ foldl (\s p -> S.insert p s) set $ scanl nextPoint start s
+  print $ S.size $ foldl (\x p -> S.insert p x) set $ scanl nextPoint start s
 
 nextPoint :: (Int, Int) -> Char -> (Int, Int)
 nextPoint (x, y) c = case c of
@@ -24,17 +24,18 @@ nextPoint (x, y) c = case c of
                        '<' -> (x-1, y)
                        '>' -> (x+1, y)
                        _   -> (x, y)
-
+evens :: [a] -> [a]
 evens (x:xs) = x:odds xs
 evens _      = []
 
+odds :: [a] -> [a]
 odds (_:xs) = evens xs
 odds _      = []
 
 second :: String -> IO ()
-second s = do
+second input = do
   let start = (0,0)
-  let oddSet = getPoints start $ odds s
-  let evenSet = getPoints start $ evens s
+  let oddSet = getPoints start $ odds input
+  let evenSet = getPoints start $ evens input
   print $ S.size $ S.union oddSet evenSet
-    where getPoints start s = foldl (\s p -> S.insert p s) (S.singleton start) $ scanl nextPoint start s
+    where getPoints start s = foldl (\x p -> S.insert p x) (S.singleton start) $ scanl nextPoint start s

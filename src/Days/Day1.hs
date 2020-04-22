@@ -11,9 +11,14 @@ day1 = do
   print $ second input
 
 first :: String -> Int
-first x =
-  foldl (\acc x -> if x == '(' then acc+1 else if x == ')' then acc-1 else acc) 0 x
+first input =
+  foldl (\acc x -> if x == '(' then acc+1 else if x == ')' then acc-1 else acc) 0 input
 
 second :: String -> Int
-second x =
-  fst $ head $ filter (\(x, y) -> y < 0) $ zip [0..] $ scanl (\acc x -> if x == '(' then acc+1 else if x == ')' then acc-1 else acc) 0 x
+second input =
+  fst $ head $ filter ((((>) :: Int -> Int -> Bool) 0). snd) $ zip [0..] $ scanl step 0 input
+    where step acc x = if x == '('
+                          then acc + 1
+                          else if x == ')'
+                          then acc - 1
+                          else acc

@@ -7,7 +7,6 @@ import           Control.Monad.ST
 import qualified Data.Array.ST      as AST
 import qualified Data.Array.Unboxed as AU
 import           Data.Either
-import           Data.List
 import           Text.Parsec
 
 type LOC = (Int, Int)

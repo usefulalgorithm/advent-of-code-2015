@@ -1,7 +1,5 @@
 module Days.Day4 (day4) where
-import           Data.Char
 import           Data.Hash.MD5
-import           Data.List
 import           Data.String.Utils
 import           Days.ReadPuzzle
 
@@ -15,4 +13,4 @@ day4 = do
 
 go :: String -> Int -> IO ()
 go key n = do
-  print $ head $ dropWhile (not . startswith (replicate n '0') . md5s . Str) $ map ((key++) . show) [0..]
+  print $ head $ dropWhile (not . startswith (replicate n '0') . md5s . Str) $ map ((key++) . (show :: Int -> String)) [0..]
