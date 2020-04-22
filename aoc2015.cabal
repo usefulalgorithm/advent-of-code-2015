@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6454b2fab59b6d155173031c61dd4ee428a8ea4438a4eff71db8d05215f7b217
+-- hash: 2978a87e646e046748a4b09bfa9c0dc3ff67e4bf316fc72140f434ec76046113
 
 name:           aoc2015
 version:        0.1.0.0
@@ -28,6 +28,8 @@ source-repository head
 library
   exposed-modules:
       Days.Day1
+      Days.Day10
+      Days.Day11
       Days.Day2
       Days.Day3
       Days.Day4
