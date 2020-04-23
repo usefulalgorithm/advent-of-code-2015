@@ -29,7 +29,12 @@ dependencies:
 - hint
 - containers
 - parsec
-- ordered-containers
+- aeson
+- bytestring
+- utf8-string
+- vector
+- unordered-containers
+- scientific
 
 library:
   source-dirs: 
