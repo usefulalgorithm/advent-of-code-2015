@@ -1,4 +1,4 @@
-module Days.Day18 where
+module Days.Day18 (day18) where
 
 import           Control.Monad
 import           Control.Monad.ST
@@ -56,6 +56,3 @@ makeGrid stuck stuff = do
 
 getNeighbors :: (Int, Int) -> [(Int, Int)]
 getNeighbors (y, x) = [(y', x') | y' <- [y-1..y+1], x' <- [x-1..x+1], x' > 0, y' > 0, x' <= xSize, y' <= ySize, (y', x') /= (y, x)]
-
-testString :: String
-testString = ".#.#.#\n...##.\n#....#\n..#...\n#.#..#\n####.."
