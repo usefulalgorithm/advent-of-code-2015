@@ -1,4 +1,4 @@
-module Days.Day22  where
+module Days.Day22 (day22) where
 
 import           Control.Monad
 import           Data.Either
